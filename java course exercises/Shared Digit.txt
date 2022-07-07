@@ -1,0 +1,35 @@
+public class SharedDigit {
+    // write your code here
+    
+    
+    
+    public static boolean hasSharedDigit(int from, int end) {
+       
+        int digit = 0;
+
+        if (from < 10 || from > 99) {
+            System.out.println("one");
+            return false;
+        }
+        else
+        if (end < 10 || end > 99) {
+            System.out.println("two");
+            return false;
+        }
+        else
+
+        while (from > 0) {
+
+                int lastDigitFrom = from % 10;
+                int lastDigitTo = end % 10;
+                int firstDigitFrom = from/10;
+                int firstDigitTo =  end/10;
+                from /=10;
+
+                if ((lastDigitFrom == lastDigitTo)||(lastDigitFrom == firstDigitFrom)||(lastDigitTo ==  firstDigitFrom) || (lastDigitFrom == firstDigitTo)) 
+                    return true;
+        }
+         return false;
+    }
+}   
+     

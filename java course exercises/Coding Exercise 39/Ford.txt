@@ -1,0 +1,22 @@
+class Ford extends Car {
+          public Ford( int cylinders,  String name) {
+         super( cylinders,name);}
+       //  this.name = name;
+        //
+     public String startEngine() {
+         return "Engine has started - Ford class";
+     }
+     public String accelerate() {
+         return "Car is accelerating - Ford class";
+     }
+
+     public String brake() {
+         return "Car is braking - Ford class";
+     }
+
+ }
+
+
+
+
+

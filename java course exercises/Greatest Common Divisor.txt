@@ -1,0 +1,25 @@
+public class GreatestCommonDivisor {
+    
+    public static int getGreatestCommonDivisor(int one, int two) {
+
+        int divisor = 0;
+
+        if ((one < 10) || (two < 10)) {
+            return -1;
+        } else if (one > two)
+            divisor = one;
+        else
+           divisor = two;
+
+             while(divisor > 0) {
+
+                  if ((one % divisor == 0) && (two % divisor == 0))  {
+                    return divisor;
+                }
+
+                divisor--;
+            }
+        return -1;
+    // write your code here
+    }
+}

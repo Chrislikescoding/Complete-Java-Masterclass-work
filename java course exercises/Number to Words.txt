@@ -1,0 +1,79 @@
+public class NumberToWords {
+    
+  public static void numberToWords(int number) {
+
+        String printNumber = "";
+
+        int count = getDigitCount(number);
+        int reversedNumber = reverse(number);
+        String name = " ";
+    if (reversedNumber < 0) {
+                System.out.println("Invalid Value");
+                 }  else
+                 
+        for (int i = 0; i < count; i++) {
+            int lastDigit = reversedNumber % 10;
+           
+
+                    switch (lastDigit) {
+                        case 1:
+                            name = "One";
+                            break;
+                        case 2:
+                            name = "Two";
+                            break;
+                        case 3:
+                            name = "Three";
+                            break;
+                        case 4:
+                            name = "Four";
+                            break;
+                        case 5:
+                            name = "Five";
+                            break;
+                        case 6:
+                            name = "Six";
+                            break;
+                        case 7:
+                            name = "Seven";
+                            break;
+                        case 8:
+                            name = "Eight";
+                            break;
+                        case 9:
+                            name = "Nine";
+                            break;
+                        case 0:
+                            name = "Zero";
+                            break;
+                    }
+                    reversedNumber /= 10;
+                    printNumber =  printNumber + " " + name;
+        }
+        System.out.println(printNumber);
+    }
+
+
+    public static int reverse(int number) {
+
+        int reverse = 0;
+        while (number != 0) {
+            int lastDigit = number % 10;
+            reverse = (reverse * 10) + lastDigit;
+            number = number / 10;
+                 }
+        return reverse;
+    }
+
+    public static int getDigitCount(int number) {
+        int length = 1;
+        if (number < 0 )
+            return -1;
+        else
+            for (int count=1; number > 0; count++) {
+            number = number / 10;
+            length = count;;
+        }
+        return length;
+    }
+}

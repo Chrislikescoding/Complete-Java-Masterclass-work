@@ -1,0 +1,52 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class SortedArray {
+    
+                
+    
+               // int[] myIntegers = getIntegers(5);
+                
+              //  sortIntegers(myIntegers);
+              //  printArray(myIntegers);
+
+            
+            public static int[] sortIntegers(int[] number) {
+
+              int [] values = number;
+              Integer [] intValues = new Integer[5];
+
+                for(int i=0; i<values.length; i++) {
+                    intValues[i] = values[i];
+                }
+                Arrays.sort(intValues, Collections.reverseOrder());
+
+                for(int i=0; i<values.length; i++) {
+                    values[i] = intValues[i];
+                }
+
+                return values;
+            }
+
+            public static int[] getIntegers(int number) {
+                 Scanner scanner = new Scanner(System.in);
+                System.out.println("Enter " + number + " integer values.\r");
+                int[] values = new int[number];
+
+                for(int i=0; i<values.length; i++) {
+                    values[i] = scanner.nextInt();
+                }
+
+                return values;
+            }
+
+            public static void printArray(int[] array) {
+                int sum = 0;
+                for(int i=0; i< array.length; i++) {
+                    System.out.println("Element " + i +" contents " + array[i]);
+                }
+
+            }
+        }
+

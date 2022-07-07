@@ -1,0 +1,53 @@
+import java.util.Scanner;
+    
+    public class MinimumElement {
+
+    // write code here
+    private static Scanner scanner;
+    private static Scanner scanner2;
+   
+    
+  //  int count = readInteger();
+  //  int array [] = new array[count];
+    
+  //  int returnedArray []  = readElements(array);
+ //   int minimum = findMin(returnedArray);
+    
+    private static int readInteger() {
+        
+    Scanner scanner = new Scanner(System.in);    
+     
+     System.out.println("Enter the number of elements the user needs to enter.\r");
+     int number =scanner.nextInt();
+     return number;
+    }    
+    
+    private static int[] readElements(int count) {
+    Scanner scanner2 = new Scanner(System.in);
+
+        System.out.println("Enter " + count + " integer values.\r");
+
+        int[] values = new int[count];
+
+        for(int i=0; i<values.length; i++) {
+            values[i] = scanner2.nextInt();
+        }
+
+        return values;
+    }
+    
+    private static int findMin(int[] array) {
+
+        int [] values = array;
+        int temp = values[0];
+
+        for(int i=0; i<values.length;  i++) {
+
+            if(values[i] < temp) temp = values[i];
+
+
+        }
+
+        return temp;
+    }
+}

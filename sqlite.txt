@@ -1,0 +1,29 @@
+CREATE TABLE songs (_id INTEGER PRIMARY KEY, track INTEGER, title TEXT NOT NULL, album INTEGER);
+CREATE TABLE albums (_id INTEGER PRIMARY KEY, name TEXT NOT NULL, artist INTEGER);
+CREATE TABLE artists (_id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+
+	SELECT songs.track, songs.title FROM songs INNER JOIN albums ON albums._id = songs.album WHERE albums.name = "Forbidden" ORDER BY songs.track;
+
+
+	SELECT songs.track, songs.title FROM songs INNER JOIN artists ON artists._id = songs.album WHERE artists.name = "Deep Purple" ORDER BY songs.track;
+
+
+	SELECT count(*)  FROM songs INNER JOIN artists ON artists._id = songs.album WHERE artists.name = "Aerosmith";
+
+SELECT DISTINCT count(title)  FROM songs INNER JOIN artists ON artists._id = songs.album WHERE artists.name = "Aerosmith";
+
+SELECT  count(DISTINCT artists.name)  FROM artists INNER JOIN songs ON songs.album = artists._id WHERE artists.name = "Aerosmith";
+
+SELECT DISTINCT(artists.name)  FROM artists INNER JOIN songs ON songs.album = artists._id INNER JOIN albums ON albums._id = songs.album;
+
+SELECT albums.name FROM from albums INNER JOIN artists ON albums.artist = artists.id WHERE artists.name = "Iron Maiden" ORDER BY albums.name COLLATE NOCASE ASC
+
+SELECT artists.name,albums.name,songs.track FROM from songs INNER JOIN albums ON songs.album = albums.id 
+INNER JOIN artists ON albums.artist = artists.id 
+WHERE songs.title = "Go Your Own Way" ORDER BY artists.name, albums.name  COLLATE NOCASE ASC
+
+sqlite> CREATE VIEW IF NOT EXISTS artist_list AS
+   ...> SELECT artists.name, albums.name AS album,songs.track, songs.title from songs
+   ...> INNER JOIN albums on songs.album = albums._id
+   ...> ORDER BY artists.name, albums.name, songs.track
+   ...> ;

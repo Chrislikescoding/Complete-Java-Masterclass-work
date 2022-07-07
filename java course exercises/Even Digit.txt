@@ -1,0 +1,23 @@
+public class EvenDigitSum {
+    // write your code here
+    public static int getEvenDigitSum(int number) {
+
+        int digit = 0;
+         int total = 0;
+        if (number < 0)
+            return -1;
+        else {
+
+            while (number > 0) {
+                
+                digit = number % 10;
+                if (number % 2 == 0){
+                total += digit;}
+                
+                number /=  10;
+                }
+                      }
+        return total;
+    }
+}     
+     

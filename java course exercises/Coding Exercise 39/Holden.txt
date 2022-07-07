@@ -1,0 +1,28 @@
+
+class Holden extends Car {
+    private String name;
+    private boolean engine;
+    private int wheels;
+    private int cylinders;
+
+    public Holden( int cylinders,String name) {
+        super(cylinders, name);
+        this.name = name;
+        this.cylinders = cylinders;
+    }
+        public String  startEngine  () {
+        return "Engine has started - Holden class";
+               
+           }
+
+    public String accelerate  () {
+        return"Car is accelerating - Holden class";
+    }
+    public String  brake  () {
+        return"Car is braking - Holden class";
+    }
+}
+
+
+
+

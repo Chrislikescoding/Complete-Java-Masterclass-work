@@ -1,0 +1,30 @@
+public class SharedDigit {
+    // write your code here
+    public class LastDigitChecker {
+    
+    public static boolean hasSameLastDigit(int first, int second, int third) {
+
+
+        if (isValid(first) && isValid(second) && isValid(third)) {
+           
+            int digitFirst = first % 10;
+            int digitSecond = second % 10;
+            int digitThird = third % 10;
+
+
+            if ((digitFirst == digitSecond) || (digitFirst == digitThird) || (digitThird == digitSecond)) {
+                return true;
+            }
+        }   
+    return false;
+  }
+  
+    public static boolean isValid (int number) {
+         
+          if (number < 10 || number  > 1000) {
+            return false;
+          }
+            return true;
+    }        
+    // write your code here
+}

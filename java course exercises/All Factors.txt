@@ -1,0 +1,25 @@
+public class FactorPrinter {
+    
+    
+       public static void printFactors(int one) {
+
+        int divisor = 1;
+        String text = " ";
+
+        if (one < 1) {
+            System.out.println("Invalid Value");
+        } else
+
+            while (divisor <= one) {
+
+                if (one % divisor == 0) {
+                    text = text + divisor + " ";
+                }
+
+                divisor++;
+            }
+        System.out.println(text);
+            
+    }
+    // write your code here
+}
